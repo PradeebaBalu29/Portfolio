@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pradeeba Balu | Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Josefin+Sans:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmVfXQX6ZSkxF3qv1nZqv4W0QKc8g0GJqD1g0Zb2Nq6k0y4Z/2e4Q7rXw4z0z9b2X2a7rY7N1ZQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ========== Global ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+      color: #e8e8e8;
+      font-family: 'Josefin Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #f5d36c, #d4af37);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    p, li {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #d6d6d6;
+    }
+
+    a { color: inherit; }
+
+    /* ========== Header block (kept for compatibility) ========== */
+    header {
+      background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom: 1px solid #5a4500;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
+    }
+
+    /* Make header image square (correction) */
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 10px;         /* <--- square shape */
+      border: 3px solid #d4af37;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #f5d36c;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+      font-family: 'Cinzel', serif;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #d8d8d8;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .header-buttons a {
+      display: inline-block;
+      background: linear-gradient(90deg, #f5d36c, #d4af37);
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+    }
+
+    .header-buttons a:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 20px #f5d36c;
+    }
+
+    /* ========== Navigation ========== */
+    nav {
+      background: #141414;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: #f5d36c;
+      margin: 0 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+      text-shadow: 0 0 15px #f5d36c;
+    }
+
+    /* Nav Icons: show icon + clear label (correction 2) */
+    .nav-icons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #f5d36c, #d4af37);
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 8px rgba(213, 175, 55, 0.08);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .nav-icon i {
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-icon:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 18px rgba(245, 211, 108, 0.25);
+    }
+
+    /* ========== Home Section ========== */
+    section { display: none; padding: 100px 10%; animation: fadeIn 0.9s ease-in-out; }
+    section.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+
+    .home-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 120px 10% 80px;
+      min-height: calc(100vh - 90px);
+      text-align: left;
+    }
+
+    .home-left img {
+      width: 280px;
+      height: 280px;
+      border-radius: 10px; /* square image on Home too */
+      border: 3px solid #d4af37;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+      margin-right: 60px;
+      object-fit: cover;
+    }
+
+    .home-right h1 {
+      font-size: 3rem;
+      color: #f5d36c;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+      font-family: 'Cinzel', serif;
+    }
+
+    .home-right p {
+      font-size: 1.2rem;
+      color: #d8d8d8;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+    }
+
+    .home-right a.contact-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #f5d36c, #d4af37);
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+    }
+
+    .home-right a.contact-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 20px #f5d36c;
+    }
+
+    /* ========== Cards & Utilities (unchanged) ========== */
+    .card { background: #1b1b1b; border: 1px solid #2e2e2e; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.05); transition: 0.3s ease; }
+    .card:hover { box-shadow: 0 0 25px rgba(255, 215, 0, 0.15); transform: translateY(-3px); }
+    .card h3 { font-family: 'Playfair Display', serif; color: #f5d36c; margin-bottom: 10px; }
+
+    /* Timeline */
+    .timeline { position: relative; margin-left: 40px; border-left: 2px solid #d4af37; padding-left: 25px; }
+    .timeline-item { margin-bottom: 25px; position: relative; }
+    .timeline-item::before { content: ""; position: absolute; left: -13px; top: 8px; width: 14px; height: 14px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 10px #f5d36c; }
+    .timeline-item h3 { color: #f5d36c; font-family: 'Cinzel', serif; }
+    .timeline-item p { color: #ccc; font-family: 'Josefin Sans', sans-serif; }
+
+    /* Skills */
+    .skill { margin-bottom: 18px; }
+    .skill-name { font-weight: 600; margin-bottom: 6px; color: #f5d36c; font-family: 'Playfair Display', serif; }
+    .skill-bar { height: 8px; background: #2b2b2b; border-radius: 10px; overflow: hidden; }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, #f5d36c, #d4af37); box-shadow: 0 0 10px #f5d36c; }
+
+    /* Certs */
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+    .cert-card { background: #141414; border-radius: 12px; padding: 20px; border-top: 3px solid #d4af37; transition: all 0.3s ease; }
+    .cert-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
+    .cert-card h3 { color: #f5d36c; margin-bottom: 10px; font-family: 'Cinzel', serif; }
+
+    /* Internships */
+    .intern-timeline { position: relative; border-left: 2px solid #d4af37; padding-left: 30px; }
+    .intern-step { margin-bottom: 25px; position: relative; }
+    .intern-step::before { content: attr(data-step); position: absolute; left: -35px; top: 0; width: 25px; height: 25px; border-radius: 50%; background: #d4af37; color: #000; text-align: center; line-height: 25px; font-weight: bold; box-shadow: 0 0 15px #f5d36c; }
+
+    /* Contact */
+    .contact-info { text-align: center; }
+    .contact-info a { color: #f5d36c; }
+
+    footer { text-align: center; padding: 20px; background: #0e0e0e; border-top: 1px solid #2b2b2b; font-size: 0.9rem; color: #aaa; font-family: 'Josefin Sans'; }
+
+    /* Responsiveness tweaks (kept same look) */
+    @media (max-width: 900px) {
+      .home-left img { width: 220px; height: 220px; margin-right: 20px; }
+      .home-right h1 { font-size: 2.2rem; }
+      nav { padding: 12px 4%; }
+      .nav-links a { margin: 0 8px; font-size: 0.9rem; }
+      .nav-icon { padding: 6px 10px; font-size: 0.9rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-links">
+      <a href="#" onclick="showSection('home')" class="active">Home</a>
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('education')">Education</a>
+      <a href="#" onclick="showSection('skills')">Skills</a>
+      <a href="#" onclick="showSection('projects')">Projects</a>
+      <a href="#" onclick="showSection('certifications')">Certifications</a>
+      <a href="#" onclick="showSection('internships')">Internships</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </div>
+
+    <div class="nav-icons">
+      <!-- Each nav-icon shows icon + clear label (visible) so visitors immediately know which is which -->
+      <a class="nav-icon" href="https://www.linkedin.com/in/pradeebabalu" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        <span style="color:#000; font-weight:700; font-family:'Cinzel', serif;">LinkedIn</span>
+      </a>
+
+      <a class="nav-icon" href="https://github.com/PradeebaBalu29" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+        <span style="color:#000; font-weight:700; font-family:'Cinzel', serif;">GitHub</span>
+      </a>
+
+      <a class="nav-icon" href="resume.pdf" target="_blank" rel="noopener noreferrer" title="Resume">
+        <i class="fas fa-file-alt" aria-hidden="true"></i>
+        <span style="color:#000; font-weight:700; font-family:'Cinzel', serif;">Resume</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Home Section (landing) -->
+  <section id="home" class="active">
+    <div class="home-container">
+      <div class="home-left">
+        <!-- Uses your previous image filename as requested -->
+        <img src="pradeeba.jpg" alt="Pradeeba Balu">
+      </div>
+
+      <div class="home-right">
+        <!-- Correction 3: exact home text requested -->
+        <h1>I'm Pradeeba</h1>
+        <p>I am currently pursuing B.E. Computer Science and Engineering at K. Ramakrishnan College of Engineering.</p>
+        <div style="margin-top: 12px;">
+          <a href="#" class="contact-btn" onclick="showSection('contact')">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About (kept exactly as original content) -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I’m a Computer Science and Engineering student at K. Ramakrishnan College of Engineering (Batch 2027). I’m deeply passionate about Artificial Intelligence, Cloud Computing, and Data Analytics. My goal is to craft intelligent systems and innovative solutions that bring meaningful change through technology.</p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>K. Ramakrishnan College of Engineering</h3>
+        <p>B.E. Computer Science and Engineering (2027)</p>
+        <p><strong>CGPA:</strong> 8.52</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Sri Jayendra Matriculation Higher Secondary School</h3>
+        <p>HSC (2023)</p>
+        <p><strong>Percentage:</strong> 87.6%</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Rajaji Vidyalaya (CBSE)</h3>
+        <p>SSLC (2021)</p>
+        <p><strong>Percentage:</strong> 85.6%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">HTML/CSS</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Tableau</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">Power BI</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">GitHub</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-name">VS Code</div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>1. Traffic Monitoring System (C)</h3>
+      <p><strong>Description:</strong> Real-time traffic monitoring system simulating vehicle tracking using data structures. Optimizes traffic flow, reduces congestion, and assists authorities.</p>
+      <p><strong>Key Learning:</strong> Data structures, dynamic vehicle data management.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Currency Converter (Python)</h3>
+      <p><strong>Description:</strong> Converts multiple currencies using real-time exchange rates with robust error handling.</p>
+      <p><strong>Key Learning:</strong> Python programming, modular design, input validation.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Mobile Tracking System (Java)</h3>
+      <p><strong>Description:</strong> GUI-based Java application to track mobile devices using unique IDs with a file-based database. Supports modular, scalable design and real-time responses.</p>
+      <p><strong>Key Learning:</strong> Java Swing, file handling, HashMaps, GUI design.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Fitness Tracker (Python + DBMS)</h3>
+      <p><strong>Description:</strong> Monitors physical activity and health metrics through an interactive interface. Encourages healthy habits via goal setting and personalized reporting.</p>
+      <p><strong>Key Learning:</strong> Python, database integration, user-focused design.</p>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications & Achievements</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>NPTEL: IoT & Cloud</h3>
+        <p>Elite + Silver in IoT and Elite in Cloud Computing.</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>GUVI: Gen AI & Python</h3>
+        <p>Comprehensive training in Generative AI and Python Zero to Hero.</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>MongoDB Basics</h3>
+        <p>Solid foundation in NoSQL databases with MongoDB.</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>Patent: AI-Powered Footwear</h3>
+        <p>Invented “AI-Powered Footwear for Visually Impaired People.”</p>
+      </div>
+
+      <div class="cert-card">
+        <h3>Hackathon Finalist</h3>
+        <p>Finalist in "AI Power Optimizer 360" Hackathon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internships -->
+  <section id="internships">
+    <h2>Internships & Workshops</h2>
+    <div class="intern-timeline">
+      <div class="intern-step" data-step="1">
+        <h3>Internship: NoviTech R&D Pvt Ltd</h3>
+        <p>Machine Learning – practical project development.</p>
+      </div>
+
+      <div class="intern-step" data-step="2">
+        <h3>Workshop: VEI Technologies</h3>
+        <p>Web Application Development hands-on experience.</p>
+      </div>
+
+      <div class="intern-step" data-step="3">
+        <h3>Value-Added: Power BI & Tableau</h3>
+        <p>Data visualization and analytics workshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p>📞 <strong>+91 99427 86301</strong></p>
+      <p>📧 <a href="mailto:pradeeba2910@gmail.com">pradeeba2910@gmail.com</a></p>
+      <p>📍 Tiruchirappalli, Tamil Nadu</p>
+      <p>🔗 <a href="https://www.linkedin.com/in/pradeebabalu" target="_blank">LinkedIn</a> | <a href="https://github.com/PradeebaBalu29" target="_blank">GitHub</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Pradeeba Balu | Crafted with ✨ elegance & passion
+  </footer>
+
+  <script>
+    // --------- showSection function (complete & robust) ----------
+    function showSection(id) {
+      // hide all sections
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+
+      // show requested section (if exists)
+      const sec = document.getElementById(id);
+      if (sec) sec.classList.add("active");
+
+      // update active class on nav links
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+
+      // match anchors whose onclick attribute contains the id
+      const navAnchor = Array.from(document.querySelectorAll("nav a")).find(a => {
+        const oc = a.getAttribute("onclick") || "";
+        return oc.indexOf("'" + id + "'") !== -1 || oc.indexOf('"' + id + '"') !== -1 || oc.indexOf(id) !== -1;
+      });
+
+      if (navAnchor) navAnchor.classList.add("active");
+
+      // scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Prevent default anchor behaviour for in-page anchors (href="#" or "#id")
+    document.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      if (href === '#' || href.startsWith('#')) {
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          // let onclick handlers (showSection) still run
+        });
+      }
+    });
+
+    // Initialize: ensure home is visible on load and nav highlights it
+    (function init() {
+      document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+      const defaultSection = document.getElementById('home');
+      if (defaultSection) defaultSection.classList.add('active');
+
+      // set active on the nav Home link
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+      const homeNav = Array.from(document.querySelectorAll('nav a')).find(a => (a.textContent || '').trim().toLowerCase() === 'home');
+      if (homeNav) homeNav.classList.add('active');
+    })();
+  </script>
+</body>
+</html>

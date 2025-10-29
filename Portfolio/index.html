@@ -5,15 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pradeeba Balu | Portfolio</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Josefin+Sans:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmVfXQX6ZSkxF3qv1nZqv4W0QKc8g0GJqD1g0Zb2Nq6k0y4Z/2e4Q7rXw4z0z9b2X2a7rY7N1ZQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    /* ========== Global ========== */
     * {
       margin: 0;
       padding: 0;
@@ -52,7 +49,6 @@
 
     a { color: inherit; }
 
-    /* ========== Header block (kept for compatibility) ========== */
     header {
       background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
       text-align: center;
@@ -61,11 +57,10 @@
       box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
     }
 
-    /* Make header image square (correction) */
     header img {
       width: 160px;
       height: 160px;
-      border-radius: 10px;         /* <--- square shape */
+      border-radius: 10px;         
       border: 3px solid #d4af37;
       margin-bottom: 15px;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
@@ -107,7 +102,6 @@
       box-shadow: 0 0 20px #f5d36c;
     }
 
-    /* ========== Navigation ========== */
     nav {
       background: #141414;
       display: flex;
@@ -144,7 +138,6 @@
       text-shadow: 0 0 15px #f5d36c;
     }
 
-    /* Nav Icons: show icon + clear label (correction 2) */
     .nav-icons {
       display: flex;
       align-items: center;
@@ -179,8 +172,7 @@
       transform: translateY(-3px);
       box-shadow: 0 0 18px rgba(245, 211, 108, 0.25);
     }
-
-    /* ========== Home Section ========== */
+    
     section { display: none; padding: 100px 10%; animation: fadeIn 0.9s ease-in-out; }
     section.active { display: block; }
 
@@ -199,7 +191,7 @@
     .home-left img {
       width: 280px;
       height: 280px;
-      border-radius: 10px; /* square image on Home too */
+      border-radius: 10px; 
       border: 3px solid #d4af37;
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
       margin-right: 60px;
@@ -241,42 +233,35 @@
       box-shadow: 0 0 20px #f5d36c;
     }
 
-    /* ========== Cards & Utilities (unchanged) ========== */
     .card { background: #1b1b1b; border: 1px solid #2e2e2e; border-radius: 12px; padding: 25px; margin-bottom: 25px; box-shadow: 0 0 15px rgba(255, 215, 0, 0.05); transition: 0.3s ease; }
     .card:hover { box-shadow: 0 0 25px rgba(255, 215, 0, 0.15); transform: translateY(-3px); }
     .card h3 { font-family: 'Playfair Display', serif; color: #f5d36c; margin-bottom: 10px; }
 
-    /* Timeline */
     .timeline { position: relative; margin-left: 40px; border-left: 2px solid #d4af37; padding-left: 25px; }
     .timeline-item { margin-bottom: 25px; position: relative; }
     .timeline-item::before { content: ""; position: absolute; left: -13px; top: 8px; width: 14px; height: 14px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 10px #f5d36c; }
     .timeline-item h3 { color: #f5d36c; font-family: 'Cinzel', serif; }
     .timeline-item p { color: #ccc; font-family: 'Josefin Sans', sans-serif; }
 
-    /* Skills */
     .skill { margin-bottom: 18px; }
     .skill-name { font-weight: 600; margin-bottom: 6px; color: #f5d36c; font-family: 'Playfair Display', serif; }
     .skill-bar { height: 8px; background: #2b2b2b; border-radius: 10px; overflow: hidden; }
     .skill-fill { height: 100%; background: linear-gradient(90deg, #f5d36c, #d4af37); box-shadow: 0 0 10px #f5d36c; }
 
-    /* Certs */
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
     .cert-card { background: #141414; border-radius: 12px; padding: 20px; border-top: 3px solid #d4af37; transition: all 0.3s ease; }
     .cert-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 215, 0, 0.2); }
     .cert-card h3 { color: #f5d36c; margin-bottom: 10px; font-family: 'Cinzel', serif; }
 
-    /* Internships */
     .intern-timeline { position: relative; border-left: 2px solid #d4af37; padding-left: 30px; }
     .intern-step { margin-bottom: 25px; position: relative; }
     .intern-step::before { content: attr(data-step); position: absolute; left: -35px; top: 0; width: 25px; height: 25px; border-radius: 50%; background: #d4af37; color: #000; text-align: center; line-height: 25px; font-weight: bold; box-shadow: 0 0 15px #f5d36c; }
 
-    /* Contact */
     .contact-info { text-align: center; }
     .contact-info a { color: #f5d36c; }
 
     footer { text-align: center; padding: 20px; background: #0e0e0e; border-top: 1px solid #2b2b2b; font-size: 0.9rem; color: #aaa; font-family: 'Josefin Sans'; }
 
-    /* Responsiveness tweaks (kept same look) */
     @media (max-width: 900px) {
       .home-left img { width: 220px; height: 220px; margin-right: 20px; }
       .home-right h1 { font-size: 2.2rem; }
@@ -288,8 +273,7 @@
   </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
+  
   <nav>
     <div class="nav-links">
       <a href="#" onclick="showSection('home')" class="active">Home</a>
@@ -303,7 +287,6 @@
     </div>
 
     <div class="nav-icons">
-      <!-- Each nav-icon shows icon + clear label (visible) so visitors immediately know which is which -->
       <a class="nav-icon" href="https://www.linkedin.com/in/pradeebabalu" target="_blank" rel="noopener noreferrer" title="LinkedIn">
         <i class="fab fa-linkedin-in" aria-hidden="true"></i>
         <span style="color:#000; font-weight:700; font-family:'Cinzel', serif;">LinkedIn</span>
@@ -321,16 +304,13 @@
     </div>
   </nav>
 
-  <!-- Home Section (landing) -->
   <section id="home" class="active">
     <div class="home-container">
       <div class="home-left">
-        <!-- Uses your previous image filename as requested -->
         <img src="pradeeba.jpg" alt="Pradeeba Balu">
       </div>
 
       <div class="home-right">
-        <!-- Correction 3: exact home text requested -->
         <h1>I'm Pradeeba</h1>
         <p>I am currently pursuing B.E. Computer Science and Engineering at K. Ramakrishnan College of Engineering.</p>
         <div style="margin-top: 12px;">
@@ -339,8 +319,7 @@
       </div>
     </div>
   </section>
-
-  <!-- About (kept exactly as original content) -->
+  
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
@@ -348,7 +327,6 @@
     </div>
   </section>
 
-  <!-- Education -->
   <section id="education">
     <h2>Education</h2>
     <div class="timeline">
@@ -372,7 +350,6 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">
@@ -408,7 +385,6 @@
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
 
@@ -436,8 +412,7 @@
       <p><strong>Key Learning:</strong> Python, database integration, user-focused design.</p>
     </div>
   </section>
-
-  <!-- Certifications -->
+  
   <section id="certifications">
     <h2>Certifications & Achievements</h2>
     <div class="cert-grid">
@@ -468,7 +443,6 @@
     </div>
   </section>
 
-  <!-- Internships -->
   <section id="internships">
     <h2>Internships & Workshops</h2>
     <div class="intern-timeline">
@@ -489,7 +463,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact-info">
@@ -505,19 +478,14 @@
   </footer>
 
   <script>
-    // --------- showSection function (complete & robust) ----------
     function showSection(id) {
-      // hide all sections
       document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
 
-      // show requested section (if exists)
       const sec = document.getElementById(id);
       if (sec) sec.classList.add("active");
 
-      // update active class on nav links
       document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
 
-      // match anchors whose onclick attribute contains the id
       const navAnchor = Array.from(document.querySelectorAll("nav a")).find(a => {
         const oc = a.getAttribute("onclick") || "";
         return oc.indexOf("'" + id + "'") !== -1 || oc.indexOf('"' + id + '"') !== -1 || oc.indexOf(id) !== -1;
@@ -525,28 +493,23 @@
 
       if (navAnchor) navAnchor.classList.add("active");
 
-      // scroll to top smoothly
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    // Prevent default anchor behaviour for in-page anchors (href="#" or "#id")
     document.querySelectorAll('a').forEach(a => {
       const href = a.getAttribute('href') || '';
       if (href === '#' || href.startsWith('#')) {
         a.addEventListener('click', function(e){
           e.preventDefault();
-          // let onclick handlers (showSection) still run
         });
       }
     });
 
-    // Initialize: ensure home is visible on load and nav highlights it
     (function init() {
       document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
       const defaultSection = document.getElementById('home');
       if (defaultSection) defaultSection.classList.add('active');
 
-      // set active on the nav Home link
       document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
       const homeNav = Array.from(document.querySelectorAll('nav a')).find(a => (a.textContent || '').trim().toLowerCase() === 'home');
       if (homeNav) homeNav.classList.add('active');
@@ -554,3 +517,4 @@
   </script>
 </body>
 </html>
+
